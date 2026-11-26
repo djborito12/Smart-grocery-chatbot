@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetailBot | Retail Management</title>
+  <meta name="color-scheme" content="light">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- LOGIN (animated: kalawakan, terminal, success check) -->
+  <div id="login-screen" class="fx-wrap">
+    <canvas id="space" aria-hidden="true"></canvas>
+    <div class="nebula" aria-hidden="true"></div>
+    <div class="fx-stage">
+      <div class="orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+      <form id="login-form" class="fx-card" autocomplete="on">
+        <span class="fx-shine" aria-hidden="true"></span>
+        <div class="fx-brand"><i>R</i>RetailBot</div>
+        <h1>Welcome<br>back</h1>
+        <label class="fx-field" for="lg-user"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.8-4 4-6 8-6s7.2 2 8 6"/></svg><input id="lg-user" placeholder="Username" autocomplete="username" aria-label="Username" required></label>
+        <label class="fx-field" for="lg-pass"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg><input id="lg-pass" type="password" placeholder="Password" autocomplete="current-password" aria-label="Password" required></label>
+        <button class="fx-btn" type="submit"><span class="fx-btn-text">Sign in</span><span class="fx-spin" aria-hidden="true"></span></button>
+        <div id="lg-msg" class="fx-error" role="alert"></div>
+        <p class="fx-note">Administrator and employee access</p>
+        <div class="fx-success" aria-hidden="true"><svg viewBox="0 0 100 100" width="110" height="110"><path d="M22 52 L42 72 L80 30"/></svg></div>
+      </form>
+      <div class="fx-term"><div class="fx-term-bar"><i></i><i></i><i></i><span>auth.log</span></div><div id="fx-log" class="fx-log" aria-live="polite"></div></div>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand logo"><i>R</i><span>RetailBot</span></div>
+      <div class="nav-label">Menu</div>
+      <nav id="nav"></nav>
+      <div class="side-foot">
+        <div id="who" class="who"></div>
+        <button class="btn-ghost" onclick="logout()">Log out</button>
+      </div>
+    </aside>
+    <main id="view" class="content"></main>
+  </div>
+
+  <div id="modal" class="modal hidden"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/extra.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/login-fx.js"></script>
+</body>
+</html>
